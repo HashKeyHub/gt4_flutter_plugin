@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
   /// 集成前，请先替换从后台申请的 `captchaId`
   /// Before initial new instance, replace `captchaId` sample with one of the captchaId registered from account backend.
   final Gt4FlutterPlugin captcha =
-      Gt4FlutterPlugin("123456789012345678901234567890ab");
+      Gt4FlutterPlugin("46fc914b52b71782eef56f81de0c75cf");
 
   @override
   void initState() {
