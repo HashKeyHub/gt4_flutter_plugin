@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gt4_flutter_plugin/gt4_flutter_plugin.dart';
+import 'package:gt4_flutter_plugin/gt4_session_configuration.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
@@ -27,12 +28,19 @@ class _MyAppState extends State<MyApp> {
   /// TO-DO
   /// 集成前，请先替换从后台申请的 `captchaId`
   /// Before initial new instance, replace `captchaId` sample with one of the captchaId registered from account backend.
-  final Gt4FlutterPlugin captcha =
-      Gt4FlutterPlugin("46fc914b52b71782eef56f81de0c75cf");
+  late Gt4FlutterPlugin captcha;
 
   @override
   void initState() {
     super.initState();
+    var a = GT4SessionConfiguration();
+    a.backgroundColor = Colors.transparent;
+    a.language = 'en';
+    captcha = Gt4FlutterPlugin(
+        Platform.isIOS
+            ? "0699132790a3e3f0b64a86853a0d2de8"
+            : "f32273568ff01a213e7739ef58614f36",
+        a);
     initPlatformState();
   }
 
